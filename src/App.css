@@ -18,8 +18,28 @@
   font-size: 1.5em;
 }
 
-.App-intro {
+.App-body {
   font-size: large;
+  width: 400px;
+  margin: 10px auto;
+}
+
+.cat-photo{
+  height: 400px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: gainsboro;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cat-photo p{
+}
+
+.cat-photo img{
+  width: auto;
+  height: 340px;
+  margin: -10px;
 }
 
 @keyframes App-logo-spin {

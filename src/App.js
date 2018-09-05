@@ -6,23 +6,39 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      cats: []
+      cats: [],
+      catsLoaded: false
     }
   }
   componentWillMount(){
-
+    fetch("/cats").then((cats) => {
+      // parse the response body as json
+      return cats.json()
+    }).then((catJSON) => {
+      this.setState({
+        cats: catJSON,
+        catsLoaded: true
+      })
+    })
   }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to Catstagram</h1>
           <p>and react virtualized</p>
         </header>
-        <p className="App-intro">
-
-        </p>
+        <div className="App-body">
+          {this.state.cats.map((cat) => {
+            return (
+              <div className='cat-photo' key={cat.id}>
+                <p>{cat.name}</p>
+                <img src={cat.url} alt={`${cat.name}`}/>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

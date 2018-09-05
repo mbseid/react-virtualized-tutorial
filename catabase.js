@@ -3,12 +3,15 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const app = express();
 const fs = require('fs');
+const sillyname = require('sillyname');
 
 
 app.get('/cats', function (req, res) {
 	const catFiles = fs.readdirSync('cats')
- 	const catURLS =  catFiles.map((cat) => {
+ 	const catURLS =  catFiles.map((cat, index) => {
  		return {
+      id: index,
+      name: sillyname(),
  			url: `/cats/${cat}`
  		}
  	})
