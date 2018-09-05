@@ -27,7 +27,8 @@
 .cat-photo{
   height: 400px;
   padding: 10px;
-  margin-bottom: 10px;
+  /* you can't have margin bottoms */
+  /* margin-bottom: 10px; */
   background-color: gainsboro;
   border-radius: 4px;
   overflow: hidden;
