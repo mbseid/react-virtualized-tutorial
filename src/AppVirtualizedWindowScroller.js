@@ -102,7 +102,7 @@ class App extends Component {
                   // Everything else is the same
                   rowHeight={430}
                   rowCount={this.state.cats.length}
-                  overscanRowCount={0}
+                  overscanRowCount={2}
                   noRowsRenderer={this._noRowsRenderer}
                   rowRenderer={this._rowRenderer}
                   width={400}

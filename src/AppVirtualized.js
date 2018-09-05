@@ -95,7 +95,7 @@ class App extends Component {
 
             // overscanRowCount prop tells react-virtualized how many rows to render above and below
             // the visiable area. This will eagly fetch the assets to balance "scrolls speed" and bandwidth
-            overscanRowCount={2}
+            overscanRowCount={0}
 
             // noRowsRenderer prop is what we should render if rowCount is 0
             noRowsRenderer={this._noRowsRenderer}
