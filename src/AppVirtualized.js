@@ -79,8 +79,16 @@ class App extends Component {
             ref="virtualized-list"
             className='App-body'
 
+            // rowRenderer prop is a function that returns the actual React Node to be rendered. Think of this
+            // like the body of map in App.js.
+            // PRO TIP: You can't use margins on the outermost dom element. It causes heights to be incorrect
+            rowRenderer={this._rowRenderer}
+
             // height prop is the total height of the "window" that we want to be visable
             height={600}
+
+            // width prop is the total width of the container. Important for grids, not as much for lists.
+            width={400}
 
             // rowHeight prop is the height of each row, important in the "total" height calculation.
             // Can also be a function if the row height is dymanic. Important part of the total size calculation.
@@ -99,13 +107,6 @@ class App extends Component {
 
             // noRowsRenderer prop is what we should render if rowCount is 0
             noRowsRenderer={this._noRowsRenderer}
-
-            // rowRenderer prop is a function that returns the actual React Node to be rendered
-            // PRO TIP: You can't use margins on the outermost dom element. It causes the heights not to be
-            rowRenderer={this._rowRenderer}
-
-            // width prop is the total width of the container. Important for grids, not as much for lists.
-            width={400}
           />
       </div>
     );

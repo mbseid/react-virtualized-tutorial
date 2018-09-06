@@ -72,15 +72,17 @@ class App extends Component {
   /* Please ensure to understand AppVirtualized.js first */
   render() {
     return (
+      // WindowScroller is a higher order component that relays window information
+      // to the virtualized list.
       <WindowScroller>
-        {({ height, isScrolling, onChildScroll, scrollTop, registerChild }) => (
+        {({ height, isScrolling, onChildScroll, scrollTop }) => (
           <div className="App">
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
               <h1 className="App-title">Welcome to Catstagram</h1>
               <p>and react virtualized</p>
             </header>
-            <div ref={registerChild}>
+            <div>
               <List
                   ref="virtualized-list"
                   className='App-body'
